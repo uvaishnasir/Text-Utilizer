@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Text from "./components/Text";
-import About from "./components/About";
+// import About from "./components/About";
 import Alert from "./components/Alert";
 
 export default function App() {
@@ -32,22 +32,15 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <>
       <Navbar mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
-      <Switch>
-        <Route path="/About">
-          {" "}
-          <About />{" "}
-        </Route>
-        <Route path="/">
-          <Text
-            showAlert={showAlert}
-            heading="Enter the text to analyze"
-            mode={mode}
-          />
-        </Route>
-      </Switch>
-    </Router>
+      {/* <About /> */}
+      <Text
+        showAlert={showAlert}
+        heading="Enter the text to analyze"
+        mode={mode}
+      />
+    </>
   );
 }

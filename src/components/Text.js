@@ -36,7 +36,7 @@ export default function Text(props) {
     <>
       <div
         className="container my-4"
-        style={{ color: props.mode == "dark" ? "white" : "black" }}
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
         <h2>{props.heading}</h2>
         <div className="my-3">
@@ -45,8 +45,8 @@ export default function Text(props) {
             value={text}
             onChange={handleChange}
             style={{
-              backgroundColor: props.mode == "dark" ? "#212529" : "white",
-              color: props.mode == "dark" ? "white" : "black",
+              backgroundColor: props.mode === "dark" ? "#212529" : "white",
+              color: props.mode === "dark" ? "white" : "black",
             }}
             id="myBox"
             rows="7"
@@ -69,16 +69,16 @@ export default function Text(props) {
         </button>
       </div>
       <div
-        style={{ color: props.mode == "dark" ? "white" : "black" }}
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
         className="container my-3"
       >
         <h3>Summary of your Text</h3>
         <p>
-          Words = {text == "" ? 0 : text.split(" ").length} and Letters ={" "}
+          Words = {text === "" ? 0 : text.split(" ").length} and Letters ={" "}
           {text.length}
         </p>
         <h3>Time to read this Text</h3>
-        <p>{0.004 * (text == "" ? 0 : text.split(" ").length)} minutes</p>
+        <p>{0.004 * (text === "" ? 0 : text.split(" ").length)} minutes</p>
         <h3>Preview</h3>
         <p>{text}</p>
       </div>

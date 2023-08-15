@@ -12,7 +12,7 @@ export default function Navbar(props) {
         className={`navbar navbar-expand-lg p-2 navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             TextUtilizer
           </a>
           <button
@@ -56,7 +56,7 @@ export default function Navbar(props) {
               className="form-check-label"
               htmlFor="flexSwitchCheckDefault"
             >
-              {capitalize(props.mode) == "Dark" ? "Light" : "Dark"} Mode
+              {capitalize(props.mode) === "Dark" ? "Light" : "Dark"} Mode
             </label>
           </div>
         </div>
