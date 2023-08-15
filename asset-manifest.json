@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Text-Utilizer/static/css/main.da3089f3.css",
+    "main.js": "/Text-Utilizer/static/js/main.ab0703fb.js",
+    "index.html": "/Text-Utilizer/index.html",
+    "main.da3089f3.css.map": "/Text-Utilizer/static/css/main.da3089f3.css.map",
+    "main.ab0703fb.js.map": "/Text-Utilizer/static/js/main.ab0703fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da3089f3.css",
+    "static/js/main.ab0703fb.js"
+  ]
+}
