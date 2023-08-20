@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Text from "./components/Text";
 // import About from "./components/About";
 import Alert from "./components/Alert";
 
 export default function App() {
-  const [mode, setMode] = useState("light"); //initia state
+  const [mode, setMode] = useState("light");
 
   const [alert, setAlert] = useState(null);
 
@@ -35,7 +35,7 @@ export default function App() {
     <>
       <Navbar mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
-      {/* <About /> */}
+      {/* <About mode={mode} /> */}
       <Text
         showAlert={showAlert}
         heading="Enter the text to analyze"

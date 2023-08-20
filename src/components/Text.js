@@ -26,7 +26,8 @@ export default function Text(props) {
   const handleCopy = () => {
     const copyText = document.getElementById("myBox");
     copyText.select();
-    copyText.setSelectionRange(0, 99999);
+    // copyText.setSelectionRange(0, 99999);
+    document.getSelection().removeAllRanges();
 
     navigator.clipboard.writeText(copyText.value);
     props.showAlert(" Copied to clipboard", "success");
@@ -52,19 +53,19 @@ export default function Text(props) {
             rows="7"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={upperClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={upperClick}>
           Convert To UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={lowerClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={lowerClick}>
           Convert To LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={removeWhite}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={removeWhite}>
           Remove WhiteSpace
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCopy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={clearText}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={clearText}>
           Clear Text
         </button>
       </div>
@@ -74,11 +75,11 @@ export default function Text(props) {
       >
         <h3>Summary of your Text</h3>
         <p>
-          Words = {text === "" ? 0 : text.split(" ").length} and Letters ={" "}
+          Words = {text.split(" ").filter((e)=>{return e.length!==0}).length} and Letters ={" "}
           {text.length}
         </p>
         <h3>Time to read this Text</h3>
-        <p>{0.004 * (text === "" ? 0 : text.split(" ").length)} minutes</p>
+        <p>{0.004 * (text === "" ? 0 : text.split(" ").filter((e)=>{return e.length!==0}).length)} minutes</p>
         <h3>Preview</h3>
         <p>{text}</p>
       </div>
