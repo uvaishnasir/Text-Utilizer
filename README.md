@@ -1,0 +1,3 @@
+# Text-Utilizer
+This TextUtilizer is a utility to manipulate your text with some functionality.
+this is created using React...
